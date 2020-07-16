@@ -2,6 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<modules>
+		<module>tinyurlclient</module>
+		<module>autoconfig</module>
+		<module>client-starter</module>
+	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -9,10 +14,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.tinyurl.springboot.starter</groupId>
-	<artifactId>spring-boot-starter-tinuurl</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-starter-tinuurl</name>
+	<artifactId>spring-boot-starter-tinyurl</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
+	<name>spring-boot-starter-tinyurl</name>
 	<description>短链接spring boot autoconfigure</description>
+	<packaging>pom</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -41,15 +47,20 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.14</version>
+		</dependency>
+    </dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
+		<finalName>spring-boot-starter-tinyurl</finalName>
 	</build>
 
 </project>
